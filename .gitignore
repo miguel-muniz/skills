@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+
+# Local credentials and environment settings
+.env
+.env.*
+!.env.example
+
+# Dependency caches and generated Python bytecode
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
