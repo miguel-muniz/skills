@@ -10,11 +10,11 @@ This repository houses reusable agent skills distributed through the skills CLI 
 - Use a unique lowercase, hyphenated directory name and matching frontmatter `name`.
 - Include a frontmatter `description` that explains what the skill does and when an agent should activate it.
 - Keep optional `references/`, `scripts/`, and `assets/` within the owning skill directory.
-- Update `README.md` whenever a skill is added, removed, renamed, or changes behavior.
+- Update `README.md` whenever a public skill is added, removed, renamed, or changes behavior. Keep internal work in progress skills out of public documentation.
 
 ## README skill entries
 
-Give each skill a `<details>` element whose `<summary>` contains the skill name and a concise skill summary. Inside it, include a description of the skill, 2–6 bullet points describing its key behaviors or rules, and a fenced shell command that installs only that skill:
+Give each public skill a `<details>` element whose `<summary>` contains the skill name and a concise skill summary. Inside it, include a description of the skill, 2–6 bullet points describing its key behaviors or rules, and a fenced shell command that installs only that skill:
 
 ```sh
 npx skills add miguel-muniz/skills --skill <skill-name>
@@ -24,14 +24,16 @@ Link to the skill's `SKILL.md`. Keep the summary, description, bullets, and inst
 
 ## Work in progress skills
 
-Set `metadata.internal` to the boolean `true` in a work in progress skill's YAML frontmatter to hide it from normal skills CLI discovery and installation:
+All work in progress skills must set `metadata.internal` to the boolean `true` in their YAML frontmatter to hide them from normal skills CLI discovery and installation:
 
 ```yaml
 metadata:
   internal: true
 ```
 
-Preview internal skills with `INSTALL_INTERNAL_SKILLS=1 npx skills add . --list`; the same environment variable enables installing them. When a skill is ready, remove `metadata.internal` or set it to `false`. This controls CLI visibility, not access to files in a public repository. See the [official authoring guide](https://github.com/vercel-labs/skills/blob/main/docs/creating-skills.md).
+Do not list internal work in progress skills in `README.md` or other public skill catalogs or documentation. Keep their working instructions in their own skill directories. If a public skill returns to work in progress, remove its public documentation entry.
+
+Preview internal skills with `INSTALL_INTERNAL_SKILLS=1 npx skills add . --list`; the same environment variable enables installing them. Only when a skill is complete and ready for release, remove `metadata.internal` or set it to `false` and add its public documentation entry. This controls CLI visibility, not access to files in a public repository. See the [official authoring guide](https://github.com/vercel-labs/skills/blob/main/docs/creating-skills.md).
 
 ## Authoring
 
