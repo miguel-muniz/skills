@@ -40,6 +40,26 @@ npx skills add miguel-muniz/skills --skill mobbin-to-canvas
 
 </details>
 
+<details>
+<summary>prototype-scaffold — Set up a working prototype with interactive controls and portable HTML export</summary>
+
+[prototype-scaffold](skills/prototype-scaffold/SKILL.md) creates an Astro-based prototyping environment with a working starter, project instructions for agents, and a self-contained HTML export for sharing.
+
+- Use Astro, React, unstyled Base UI, Nano Stores, Motion, Tweakpane, Tabler React icons, vanilla CSS, clsx, and npm by default.
+- Check current installation docs, package compatibility, and Node requirements; use non-interactive commands and protect existing files.
+- Add draggable prototype controls with a saved position, hide-until-refresh, and reset position, backed by shared state.
+- Keep realistic sample content in editable local files and document project conventions in `AGENTS.md`.
+- Set up `npm run export` to bundle the prototype into a single HTML file, preserving earlier exports and hiding controls by default.
+- Verify separate-island state sharing, type checks, builds, and interactions; offer alternatives on request, including Tailwind with a local `cn()` helper and a theme choice when relevant.
+
+Install only this skill:
+
+```sh
+npx skills add miguel-muniz/skills --skill prototype-scaffold
+```
+
+</details>
+
 ## Repository layout
 
 ```text
